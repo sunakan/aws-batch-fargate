@@ -17,4 +17,4 @@ RUN ./aws/install \
   && rm -rf /var/lib/apt/lists/*
 COPY ./main.sh ./main.sh
 
-ENTRYPOINT ["sh", "./main.sh"]
+ENTRYPOINT ["/bin/bash", "./main.sh"]
