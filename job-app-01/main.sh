@@ -11,6 +11,10 @@ readonly CURRENT_MONTH_DAY_1=$2 #`date '+%Y-%m'`-01
 echo 開始：${LAST_MONTH_DAY_1}
 echo 終了：${CURRENT_MONTH_DAY_1}
 
+echo ===========================================================================
+env
+echo ===========================================================================
+
 echo 'サービス,使用量(単位:不明),割引前料金,割引後料金'
 aws ce get-cost-and-usage \
   --region ap-northeast-1 \
