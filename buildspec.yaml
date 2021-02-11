@@ -8,5 +8,5 @@ phases:
       golang: 1.15
   build:
     commands:
-      - cd job-app-01 && make ci && ${CODEBUILD_SRC_DIR}
-      - cd job-app-02 && make ci && ${CODEBUILD_SRC_DIR}
+      - cd job-app-01 && make ci && cd ${CODEBUILD_SRC_DIR}
+      - cd job-app-02 && make ci && cd ${CODEBUILD_SRC_DIR}
