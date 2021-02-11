@@ -4,6 +4,8 @@
 # $ sh main.sh $(date -d '1 month ago' +'%Y-%m'-01) $(date '+%Y-%m'-01)
 ################################################################################
 
+aws configure list
+
 readonly LAST_MONTH_DAY_1=$1 #`date -d '1 month ago' +'%Y-%m'`-01
 readonly CURRENT_MONTH_DAY_1=$2 #`date '+%Y-%m'`-01
 
