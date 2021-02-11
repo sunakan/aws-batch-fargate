@@ -9,6 +9,5 @@ phases:
   build:
     commands:
       - cd job-app-01
-      - ls -al
-      - pwd
+      - docker --version
       - make ci
