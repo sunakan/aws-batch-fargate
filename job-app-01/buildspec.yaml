@@ -8,5 +8,6 @@ phases:
       golang: 1.15
   build:
     commands:
-      - cd job-app-01
+      - pwd
+      - ls -al
       - make ci
