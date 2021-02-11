@@ -8,6 +8,10 @@ phases:
       golang: 1.15
   build:
     commands:
+      - echo -----------
       - pwd
-      - ls -al
-      - make ci
+      - echo -----------
+      - cd job-app-01 && make ci
+      - pwd
+      - echo ========================
+      - env
