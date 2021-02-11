@@ -2,25 +2,11 @@
 
 version: 0.2
 
-env:
-  variables:
-    AWS_REGION_NAME: ap-northeast-1
-    ECR_REPOSITORY_NAME: job-app-01
-
 phases:
   install:
     runtime-versions:
       golang: 1.15
-  pre_build:
-    commands:
-      - IMAGE_TAG=$(git rev-parse --short HEAD)
-      - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
-      - REPOSITORY_URI=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION_NAME}.amazonaws.com/${ECR_REPOSITORY_NAME}
-      - aws ecr get-login-password --region ${AWS_REGION_NAME} | docker login --username AWS --password-stdin ${REPOSITORY_URI}
   build:
     commands:
-      - make --version
-      - docker build -t ${REPOSITORY_URI}:${IMAGE_TAG} .
-  post_build:
-    commands:
-      - docker push ${REPOSITORY_URI}:${IMAGE_TAG}
+      - cd job-app-01
+      - make ci
