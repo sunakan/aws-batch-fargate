@@ -9,4 +9,6 @@ phases:
   build:
     commands:
       - cd job-app-01
+      - ls -al
+      - pwd
       - make ci
